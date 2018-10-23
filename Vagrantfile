@@ -9,9 +9,9 @@ Vagrant.configure(2) do |config|
     sudo service ssh restart
   EOC
 
-  config.vm.define("app01"){ |a| a.vm.box = "ubuntu/trusty64"; a.vm.network('forwarded_port', guest: 22, host: 2200) }
-  config.vm.define("app02"){ |a| a.vm.box = "ubuntu/trusty64"; a.vm.network('forwarded_port', guest: 22, host: 2201) }
-  config.vm.define("lb01") { |a| a.vm.box = "ubuntu/trusty64"; a.vm.network('forwarded_port', guest: 22, host: 2202) }
-  config.vm.define("db01") { |a| a.vm.box = "ubuntu/trusty64"; a.vm.network('forwarded_port', guest: 22, host: 2203) }
+  config.vm.define("app01"){ |a| a.vm.box = "ubuntu/trusty64";}# a.vm.network('forwarded_port', guest: 22, host: 2222) }
+  config.vm.define("app02"){ |a| a.vm.box = "ubuntu/trusty64";}# a.vm.network('forwarded_port', guest: 22, host: 2200) }
+  config.vm.define("lb01") { |a| a.vm.box = "ubuntu/trusty64";}# a.vm.network('forwarded_port', guest: 22, host: 2201) }
+  config.vm.define("db01") { |a| a.vm.box = "ubuntu/trusty64";}# a.vm.network('forwarded_port', guest: 22, host: 2202) }
 end
 
