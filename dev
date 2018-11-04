@@ -1,12 +1,12 @@
 [webserver]
-app01 ansible_port=2222 ansible_host=127.0.0.1 ansible_user=vagrant
-app02 ansible_port=2200 ansible_host=127.0.0.1 ansible_user=vagrant
+app01 ansible_host=192.168.1.254 ansible_user=vagrant
+app02 ansible_host=192.168.1.253 ansible_user=vagrant
 
 [loadbalancer]
-lb01 ansible_port=2201 ansible_host=127.0.0.1 ansible_user=vagrant
+lb01 ansible_host=192.168.1.252 ansible_user=vagrant
 
 [database]
-db01 ansible_port=2202 ansible_host=127.0.0.1 ansible_user=vagrant
+db01 ansible_host=192.168.1.251 ansible_user=vagrant
 
 [control]
 control ansible_connection=local ansible_sudo_pass=
