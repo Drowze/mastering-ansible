@@ -9,9 +9,17 @@ Vagrant.configure(2) do |config|
     sudo service ssh restart
   EOC
 
-  config.vm.define("app01"){ |a| a.vm.box = "ubuntu/trusty64"; a.vm.network('private_network', ip: '192.168.1.254') }
-  config.vm.define("app02"){ |a| a.vm.box = "ubuntu/trusty64"; a.vm.network('private_network', ip: '192.168.1.253') }
-  config.vm.define("lb01") { |a| a.vm.box = "ubuntu/trusty64"; a.vm.network('private_network', ip: '192.168.1.252') }
-  config.vm.define("db01") { |a| a.vm.box = "ubuntu/trusty64"; a.vm.network('private_network', ip: '192.168.1.251') }
+  {
+    'app01' => '192.168.1.254',
+    'app02' => '192.168.1.253',
+    'lb01' => '192.168.1.252',
+    'db01' => '192.168.1.251'
+  }.each do |name, ip_address|
+    config.vm.define name do |a|
+      a.vm.box = 'ubuntu/trusty64'
+      a.vm.hostname = name
+      a.vm.network 'private_network', ip: ip_address
+    end
+  end
 end
 
