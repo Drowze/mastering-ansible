@@ -22,4 +22,4 @@
 
 - name: create demo user
   mysql_user: name={{ db_user_name }} password={{ db_user_pass}}
-              priv={{ db_name}}.*:ALL host='{{ db_user_host }}' state=present
+              priv={{ db_name }}.*:ALL host='{{ db_user_host }}' state=present
