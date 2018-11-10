@@ -5,7 +5,7 @@ upstream {{ item.key }} {
 }
 
 server {
-	listen {{ item.value.frontend }}
+	listen {{ item.value.frontend }};
 
 	location / {
 		proxy_pass http://{{ item.key }};
