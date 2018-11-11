@@ -6,7 +6,6 @@
       - python-virtualenv
       - python-mysqldb
     state: present
-    update_cache: yes
 
 - name: copy demo app source
   copy: src=demo/app/ dest=/var/www/demo mode=0755
